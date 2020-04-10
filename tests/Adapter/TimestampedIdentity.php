@@ -2,7 +2,7 @@
 
 namespace BSP\UserAccountManagement\Tests\Adapter;
 
-use BSP\UserAccountManagement\Application\Ports\UserId;
+use BSP\UserAccountManagement\Application\Ports\Driven\UserId;
 
 final class TimestampedIdentity implements UserId
 {
