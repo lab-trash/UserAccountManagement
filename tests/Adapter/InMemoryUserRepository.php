@@ -5,6 +5,7 @@ namespace BSP\UserAccountManagement\Tests\Adapter;
 use BSP\UserAccountManagement\Application\Entity\User;
 use BSP\UserAccountManagement\Application\Ports\UserId;
 use BSP\UserAccountManagement\Application\Ports\UserRepository;
+use BSP\UserAccountManagement\Application\ValueObject\Email;
 use Exception;
 
 final class InMemoryUserRepository implements UserRepository
@@ -15,6 +16,19 @@ final class InMemoryUserRepository implements UserRepository
     public function add(User $user): void
     {
         $this->users[$user->id()->toString()] = $user;
+    }
+
+    public function emailIsAlreadyUsed(Email $email): bool
+    {
+        $emailAlreadyUsed = false;
+        foreach ($this->users as $user) {
+            if ($user->email()->equals($email)) {
+                $emailAlreadyUsed = true;
+                break;
+            }
+        }
+
+        return $emailAlreadyUsed;
     }
 
     /**

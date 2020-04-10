@@ -3,6 +3,7 @@
 namespace BSP\UserAccountManagement\Application;
 
 use BSP\UserAccountManagement\Application\Entity\User;
+use BSP\UserAccountManagement\Application\Exception\EmailAlreadyUsed;
 use BSP\UserAccountManagement\Application\Ports\UserId;
 use BSP\UserAccountManagement\Application\Ports\UserRepository;
 use BSP\UserAccountManagement\Application\ValueObject\Email;
@@ -18,13 +19,22 @@ final class UserRecorder
         $this->userRepository = $userRepository;
     }
 
+    /**
+     * @throws EmailAlreadyUsed
+     */
     public function record(
         UserId $userId,
         string $email,
         string $password,
         string $name
     ): void {
-        $user = new User($userId, new Email($email), HashedPassword::Hash($password), $name);
+        $email = new Email($email);
+        $hashedPassword = HashedPassword::Hash($password);
+        $user = new User($userId, $email, $hashedPassword, $name);
+
+        if ($this->userRepository->emailIsAlreadyUsed($email)) {
+            throw new EmailAlreadyUsed();
+        }
 
         $this->userRepository->add($user);
     }
