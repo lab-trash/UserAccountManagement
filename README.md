@@ -13,12 +13,6 @@ Provides logic for:
 
 This logic is re-implemented each time I start a new side-project.
 
-## Personal goals for this library:
-
-- Learning to create a package properly
-- Using Prophecy in testing
-- Doing TDD
-
 ## TOOLING
 
 Contains:
