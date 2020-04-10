@@ -15,13 +15,13 @@ final class Email
         $this->value = $email;
     }
 
-    public function value(): string
-    {
-        return $this->value;
-    }
-
     public function equals(Email $email): bool
     {
         return $this->value === $email->value();
+    }
+
+    private function value(): string
+    {
+        return $this->value;
     }
 }

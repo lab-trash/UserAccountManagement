@@ -6,23 +6,24 @@ final class HashedPassword
 {
     private string $value;
 
-    public static function Hash(string $password, string $algo = PASSWORD_DEFAULT): self
+    public static function hash(string $password, string $algo = PASSWORD_DEFAULT): self
     {
-        return new self(password_hash($password, $algo));
+        $hashedPassword = password_hash($password, $algo);
+
+        if ($hashedPassword === false) {
+            throw new \RuntimeException('failed to hash password');
+        }
+
+        return new self($hashedPassword);
     }
 
-    public static function FromHash(string $hashedPassword): self
+    public static function fromHash(string $hashedPassword): self
     {
         if (!self::isPasswordHashed($hashedPassword)) {
             throw new \LogicException('password is not hashed');
         }
 
         return new self($hashedPassword);
-    }
-
-    public function value(): string
-    {
-        return $this->value;
     }
 
     public function equals(string $password): bool

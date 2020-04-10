@@ -5,6 +5,7 @@
         <exclude name="Symfony.Commenting" />
         <exclude name="Symfony.NamingConventions.ValidClassName" />
         <exclude name="Symfony.Functions.Arguments" />
+        <exclude name="Symfony.ControlStructure.YodaConditions" />
     </rule>
     <file>src</file>
 </ruleset>

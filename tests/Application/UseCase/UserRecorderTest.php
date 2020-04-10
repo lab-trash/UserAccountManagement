@@ -36,6 +36,7 @@ final class UserRecorderTest extends TestCase
     {
         // EXPECT
         $this->expectException(EmailAlreadyUsed::class);
+        $this->expectExceptionMessage('Email already used');
 
         // GIVEN
         $userId = new TimestampedIdentity();

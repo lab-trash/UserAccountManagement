@@ -29,7 +29,7 @@ final class UserRecorder
         string $name
     ): void {
         $email = new Email($email);
-        $hashedPassword = HashedPassword::Hash($password);
+        $hashedPassword = HashedPassword::hash($password);
         $user = new User($userId, $email, $hashedPassword, $name);
 
         if ($this->userRepository->emailIsAlreadyUsed($email)) {

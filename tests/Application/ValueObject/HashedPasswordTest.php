@@ -13,7 +13,7 @@ final class HashedPasswordTest extends TestCase
         $plainPassword = "WhatAGreat_password!";
 
         // WHEN
-        $hashedPassword = HashedPassword::Hash($plainPassword);
+        $hashedPassword = HashedPassword::hash($plainPassword);
 
         // THEN
         $this->assertTrue($plainPassword !== $hashedPassword);
@@ -29,7 +29,7 @@ final class HashedPasswordTest extends TestCase
         $plainPassword = "WhatAGreat_password!";
 
         // WHEN
-        HashedPassword::FromHash($plainPassword);
+        HashedPassword::fromHash($plainPassword);
     }
 
     public function test equals(): void
@@ -38,7 +38,7 @@ final class HashedPasswordTest extends TestCase
         $plainPassword = "WhatAGreat_password!";
 
         // WHEN
-        $hashedPassword = HashedPassword::Hash($plainPassword);
+        $hashedPassword = HashedPassword::hash($plainPassword);
 
         // THEN
         $this->assertTrue($hashedPassword->equals($plainPassword));
