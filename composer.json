@@ -1,6 +1,6 @@
 {
-    "name": "blacksmith-project/event-manager",
-    "description": "A PHP library providing event tools",
+    "name": "blacksmith-project/user-account-management",
+    "description": "A PHP library providing user account management",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -29,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "BSP\\": "src/"
+            "BSP\\UserAccountManagement\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BSP\\Tests\\": "tests/"
+            "BSP\\UserAccountManagement\\Tests\\": "tests/"
         }
     }
 }

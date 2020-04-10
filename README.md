@@ -1,9 +1,25 @@
-# BlacksmithProject Library
+# BlacksmithProject UserManagementAccount
 
-## TODO:
+Provides logic for: 
+- email/password registration
+- activation
+- authentication
+- info update
+- forgotten password declaration
+- password update
+- user exposition 
 
-- [ ] You should modify `composer.json` and update `name`, `description`, `authors` and namespaces in `autoload`/`autoload-dev`.
-- [ ] You should modify this `README.md`.
+## Why:
+
+This logic is re-implemented each time I start a new side-project.
+
+## Personal goals for this library:
+
+- Learning to create a package properly
+- Using Prophecy in testing
+- Doing TDD
+
+## TOOLING
 
 Contains:
 
