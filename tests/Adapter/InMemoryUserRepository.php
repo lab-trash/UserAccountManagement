@@ -3,8 +3,8 @@
 namespace BSP\UserAccountManagement\Tests\Adapter;
 
 use BSP\UserAccountManagement\Application\Entity\User;
-use BSP\UserAccountManagement\Application\Ports\UserId;
-use BSP\UserAccountManagement\Application\Ports\UserRepository;
+use BSP\UserAccountManagement\Application\Ports\Driven\UserId;
+use BSP\UserAccountManagement\Application\Ports\Driven\UserRepository;
 use BSP\UserAccountManagement\Application\ValueObject\Email;
 use Exception;
 

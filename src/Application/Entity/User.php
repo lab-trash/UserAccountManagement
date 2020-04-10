@@ -2,7 +2,7 @@
 
 namespace BSP\UserAccountManagement\Application\Entity;
 
-use BSP\UserAccountManagement\Application\Ports\UserId;
+use BSP\UserAccountManagement\Application\Ports\Driven\UserId;
 use BSP\UserAccountManagement\Application\ValueObject\Email;
 use BSP\UserAccountManagement\Application\ValueObject\HashedPassword;
 
